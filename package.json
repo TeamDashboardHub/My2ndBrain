@@ -1,0 +1,21 @@
+{
+  "name": "second-brain",
+  "version": "1.0.0",
+  "description": "Second Brain — Application de gestion de connaissances personnelles avec IA",
+  "main": "index.html",
+  "scripts": {
+    "sync": "npx cap sync android",
+    "open": "npx cap open android",
+    "build": "npx cap sync android && npx cap open android"
+  },
+  "keywords": ["second-brain", "notes", "ai", "capacitor"],
+  "author": "Djo",
+  "license": "MIT",
+  "dependencies": {
+    "@capacitor/android": "^6.0.0",
+    "@capacitor/core": "^6.0.0"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^6.0.0"
+  }
+}
