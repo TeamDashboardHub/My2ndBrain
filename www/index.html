@@ -18,11 +18,10 @@
   --tag-cal:#2563eb;--tag-cal-bg:rgba(37,99,235,0.15);
   --fn:'Syne',sans-serif;--fm:'DM Mono',monospace;
   --topbar:52px;--bottombar:60px;
-  /* Safe area pour les téléphones avec encoche/caméra */
-  --safe-top: env(safe-area-inset-top, 0px);
-  --safe-bottom: env(safe-area-inset-bottom, 0px);
-  --safe-left: env(safe-area-inset-left, 0px);
-  --safe-right: env(safe-area-inset-right, 0px);
+  --safe-top:env(safe-area-inset-top,0px);
+  --safe-bottom:env(safe-area-inset-bottom,0px);
+  --safe-left:env(safe-area-inset-left,0px);
+  --safe-right:env(safe-area-inset-right,0px);
 }
 html{height:100%;height:-webkit-fill-available;}
 body{
@@ -34,16 +33,10 @@ body{
   padding-left:var(--safe-left);
   padding-right:var(--safe-right);
 }
-
-/* ── LAYOUT ── */
 .app{display:flex;flex-direction:column;height:100%;height:-webkit-fill-available;}
 
 /* TOPBAR */
-.topbar{
-  height:var(--topbar);display:flex;align-items:center;gap:10px;
-  padding:0 16px;border-bottom:1px solid var(--border);
-  background:var(--surface);flex-shrink:0;
-}
+.topbar{height:var(--topbar);display:flex;align-items:center;gap:10px;padding:0 16px;border-bottom:1px solid var(--border);background:var(--surface);flex-shrink:0;}
 .logo{display:flex;align-items:center;gap:8px;font-size:16px;font-weight:700;letter-spacing:-0.3px;}
 .logo-dot{width:26px;height:26px;border-radius:7px;background:var(--accent);display:flex;align-items:center;justify-content:center;}
 .logo-dot i{font-size:14px;color:#fff;}
@@ -57,31 +50,21 @@ body{
 .stat strong{color:var(--accent2);}
 .menu-btn{display:none;background:none;border:none;color:var(--text);font-size:24px;cursor:pointer;padding:4px;}
 
-/* CONTENT AREA */
+/* CONTENT */
 .content-area{display:flex;flex:1;overflow:hidden;}
 
 /* SIDEBAR */
-.sidebar{
-  width:215px;background:var(--surface);border-right:1px solid var(--border);
-  padding:14px 10px;overflow-y:auto;flex-shrink:0;display:flex;flex-direction:column;gap:3px;
-  transition:transform .25s ease;
-}
+.sidebar{width:215px;background:var(--surface);border-right:1px solid var(--border);padding:14px 10px;overflow-y:auto;flex-shrink:0;display:flex;flex-direction:column;gap:3px;transition:transform .25s ease;}
 .sidebar-label{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);padding:8px 8px 4px;margin-top:6px;}
-.nav-item{
-  display:flex;align-items:center;gap:8px;padding:9px 10px;border-radius:10px;
-  cursor:pointer;color:var(--muted);font-size:14px;transition:all .15s;
-  border:none;background:none;width:100%;text-align:left;
-}
+.nav-item{display:flex;align-items:center;gap:8px;padding:9px 10px;border-radius:10px;cursor:pointer;color:var(--muted);font-size:14px;transition:all .15s;border:none;background:none;width:100%;text-align:left;}
 .nav-item:hover{background:var(--surface2);color:var(--text);}
 .nav-item.active{background:rgba(124,106,255,0.15);color:var(--accent2);}
 .nav-item i{font-size:18px;}
 .nav-badge{margin-left:auto;background:var(--surface2);border-radius:20px;padding:2px 8px;font-size:12px;font-family:var(--fm);color:var(--muted);}
 .nav-item.active .nav-badge{background:rgba(124,106,255,0.2);color:var(--accent2);}
 
-/* MAIN + AI WRAPPER */
+/* MAIN + AI */
 .main-ai{display:flex;flex:1;overflow:hidden;}
-
-/* MAIN */
 .main{display:flex;flex-direction:column;flex:1;overflow:hidden;background:var(--bg);}
 .main-header{padding:16px 20px 12px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;flex-shrink:0;}
 .main-header h2{font-size:16px;font-weight:700;flex:1;}
@@ -97,11 +80,7 @@ body{
 .notes-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;}
 
 /* CARDS */
-.note-card{
-  background:var(--surface);border:1px solid var(--border);border-radius:14px;
-  padding:16px;cursor:pointer;transition:all .2s;display:flex;flex-direction:column;gap:10px;
-  animation:fadeIn .2s ease;
-}
+.note-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px;cursor:pointer;transition:all .2s;display:flex;flex-direction:column;gap:10px;animation:fadeIn .2s ease;}
 @keyframes fadeIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
 .note-card:hover{border-color:var(--border2);transform:translateY(-1px);}
 .note-card.calendar-card{border-left:3px solid var(--tag-cal);}
@@ -122,36 +101,16 @@ body{
 .empty-state i{font-size:40px;opacity:.3;}
 .empty-state p{font-size:14px;}
 
-/* API KEY BANNER */
-.api-banner{
-  display:none;padding:10px 16px;background:rgba(186,117,23,0.12);
-  border-bottom:1px solid rgba(186,117,23,0.25);
-  align-items:center;gap:10px;font-size:13px;color:#efb752;flex-shrink:0;
-}
+/* BANNERS */
+.api-banner{display:none;padding:10px 16px;background:rgba(186,117,23,0.12);border-bottom:1px solid rgba(186,117,23,0.25);align-items:center;gap:10px;font-size:13px;color:#efb752;flex-shrink:0;}
 .api-banner.visible{display:flex;}
-.api-banner input{
-  flex:1;background:var(--surface2);border:1px solid rgba(186,117,23,0.3);
-  border-radius:8px;padding:6px 10px;color:var(--text);font-family:var(--fm);
-  font-size:13px;outline:none;
-}
+.api-banner input{flex:1;background:var(--surface2);border:1px solid rgba(186,117,23,0.3);border-radius:8px;padding:6px 10px;color:var(--text);font-family:var(--fm);font-size:13px;outline:none;}
 .api-banner input:focus{border-color:var(--accent);}
-.api-banner button{
-  background:var(--accent);border:none;border-radius:8px;
-  padding:6px 13px;color:#fff;font-family:var(--fn);font-size:13px;cursor:pointer;
-}
-
-/* GOOGLE CALENDAR BANNER */
-.gcal-banner{
-  display:none;padding:10px 16px;background:rgba(37,99,235,0.1);
-  border-bottom:1px solid rgba(37,99,235,0.2);
-  align-items:center;gap:10px;font-size:13px;color:#93b4ff;flex-shrink:0;
-}
+.api-banner button{background:var(--accent);border:none;border-radius:8px;padding:6px 13px;color:#fff;font-family:var(--fn);font-size:13px;cursor:pointer;}
+.gcal-banner{display:none;padding:10px 16px;background:rgba(37,99,235,0.1);border-bottom:1px solid rgba(37,99,235,0.2);align-items:center;gap:10px;font-size:13px;color:#93b4ff;flex-shrink:0;}
 .gcal-banner.visible{display:flex;}
-.gcal-banner button{
-  background:#2563eb;border:none;border-radius:8px;
-  padding:6px 13px;color:#fff;font-family:var(--fn);font-size:13px;cursor:pointer;
-  display:flex;align-items:center;gap:6px;
-}
+.gcal-banner .gcal-btn{background:#2563eb;border:none;border-radius:8px;padding:6px 13px;color:#fff;font-family:var(--fn);font-size:13px;cursor:pointer;display:flex;align-items:center;gap:6px;white-space:nowrap;}
+.gcal-banner .close-btn{background:none;border:none;color:var(--muted);font-size:18px;cursor:pointer;flex-shrink:0;}
 
 /* AI PANEL */
 .ai-panel{width:310px;background:var(--surface);border-left:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden;flex-shrink:0;}
@@ -198,33 +157,22 @@ body{
 .modal select option{background:var(--surface2);}
 .modal-actions{display:flex;gap:8px;justify-content:flex-end;}
 
-/* BOTTOM NAV (mobile) */
-.bottom-nav{
-  display:none;background:var(--surface);border-top:1px solid var(--border);
-  flex-shrink:0;justify-content:space-around;align-items:center;
-  padding-bottom:var(--safe-bottom);
-  min-height:var(--bottombar);
-}
+/* BOTTOM NAV */
+.bottom-nav{display:none;background:var(--surface);border-top:1px solid var(--border);flex-shrink:0;justify-content:space-around;align-items:center;padding-bottom:var(--safe-bottom);min-height:var(--bottombar);}
 .bottom-nav-item{display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;color:var(--muted);font-size:11px;background:none;border:none;font-family:var(--fn);padding:8px 20px;border-radius:10px;transition:all .15s;}
 .bottom-nav-item i{font-size:22px;}
 .bottom-nav-item.active{color:var(--accent2);}
 
-/* MOBILE OVERLAY SIDEBAR */
+/* SIDEBAR OVERLAY */
 .sidebar-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:100;}
 .sidebar-overlay.open{display:block;}
 
-/* MOBILE AI SHEET */
-.ai-sheet{
-  display:none;position:fixed;bottom:0;left:0;right:0;
-  background:var(--surface);border-top:1px solid var(--border2);
-  border-radius:20px 20px 0 0;z-index:150;flex-direction:column;
-  height:78vh;transition:transform .3s ease;transform:translateY(100%);
-  padding-bottom:var(--safe-bottom);
-}
+/* AI SHEET MOBILE */
+.ai-sheet{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--surface);border-top:1px solid var(--border2);border-radius:20px 20px 0 0;z-index:150;flex-direction:column;height:78vh;transition:transform .3s ease;transform:translateY(100%);padding-bottom:var(--safe-bottom);}
 .ai-sheet.open{display:flex;transform:translateY(0);}
 .ai-sheet-handle{width:40px;height:4px;background:var(--border2);border-radius:2px;margin:12px auto 0;}
 
-/* ── RESPONSIVE ── */
+/* RESPONSIVE */
 @media(max-width:900px){.ai-panel{display:none;}.topbar-stats{display:none;}}
 @media(max-width:640px){
   .sidebar{position:fixed;left:0;top:0;bottom:0;z-index:110;transform:translateX(-100%);width:240px;padding-top:calc(var(--safe-top) + 14px);}
@@ -249,13 +197,9 @@ body{
 <body>
 <div class="app">
 
-  <!-- TOPBAR -->
   <header class="topbar">
-    <button class="menu-btn" onclick="toggleSidebar()" aria-label="Menu"><i class="ti ti-menu-2"></i></button>
-    <div class="logo">
-      <div class="logo-dot"><i class="ti ti-brain"></i></div>
-      <span>Second Brain</span>
-    </div>
+    <button class="menu-btn" onclick="toggleSidebar()"><i class="ti ti-menu-2"></i></button>
+    <div class="logo"><div class="logo-dot"><i class="ti ti-brain"></i></div><span>Second Brain</span></div>
     <div class="topbar-search">
       <i class="ti ti-search"></i>
       <input type="text" id="searchInput" placeholder="Rechercher..." oninput="renderNotes()">
@@ -266,30 +210,26 @@ body{
     </div>
   </header>
 
-  <!-- API KEY BANNER -->
+  <!-- API BANNER -->
   <div class="api-banner" id="apiBanner">
     <i class="ti ti-key" style="font-size:17px;flex-shrink:0;"></i>
-    <span style="white-space:nowrap;">Clé API Anthropic :</span>
+    <span style="white-space:nowrap;">Clé API :</span>
     <input type="password" id="apiKeyInput" placeholder="sk-ant-...">
     <button onclick="saveApiKey()">Enregistrer</button>
     <button onclick="document.getElementById('apiBanner').classList.remove('visible')" style="background:none;border:1px solid rgba(186,117,23,0.3);color:#efb752;">✕</button>
   </div>
 
-  <!-- GOOGLE CALENDAR BANNER -->
+  <!-- GCAL BANNER -->
   <div class="gcal-banner" id="gcalBanner">
     <i class="ti ti-calendar" style="font-size:17px;flex-shrink:0;"></i>
     <span style="flex:1;">Connecte Google Calendar pour importer tes événements</span>
-    <button onclick="connectGoogleCalendar()">
-      <i class="ti ti-brand-google"></i> Connecter
-    </button>
-    <button onclick="document.getElementById('gcalBanner').classList.remove('visible')" style="background:none;border:none;color:var(--muted);font-size:18px;cursor:pointer;">✕</button>
+    <button class="gcal-btn" onclick="connectGoogleCalendar()"><i class="ti ti-brand-google"></i>Connecter</button>
+    <button class="close-btn" onclick="document.getElementById('gcalBanner').classList.remove('visible')">✕</button>
   </div>
 
-  <!-- CONTENT -->
   <div class="content-area">
     <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
 
-    <!-- SIDEBAR -->
     <aside class="sidebar" id="sidebar">
       <div class="sidebar-label">Filtres</div>
       <button class="nav-item active" onclick="setFilter('all',this)"><i class="ti ti-layout-grid"></i>Toutes<span class="nav-badge" id="badge-all">0</span></button>
@@ -307,45 +247,32 @@ body{
     </aside>
 
     <div class="main-ai">
-      <!-- MAIN -->
       <main class="main">
         <div class="main-header">
           <h2 id="mainTitle">Toutes les notes</h2>
-          <button class="btn btn-accent" onclick="openModal()">
-            <i class="ti ti-plus"></i><span class="btn-text">Nouvelle note</span>
-          </button>
+          <button class="btn btn-accent" onclick="openModal()"><i class="ti ti-plus"></i><span class="btn-text">Nouvelle note</span></button>
         </div>
         <div class="filter-row">
           <button class="filter-chip active" onclick="setSort('date',this)">Récentes</button>
           <button class="filter-chip" onclick="setSort('title',this)">A–Z</button>
           <button class="filter-chip" onclick="setSort('oldest',this)">Anciennes</button>
         </div>
-        <div class="notes-area">
-          <div class="notes-grid" id="notesGrid"></div>
-        </div>
+        <div class="notes-area"><div class="notes-grid" id="notesGrid"></div></div>
       </main>
 
-      <!-- AI PANEL (desktop) -->
       <aside class="ai-panel">
         <div class="ai-header">
           <i class="ti ti-sparkles" style="color:var(--accent);font-size:18px;"></i>
           <h3>Assistant IA</h3>
           <span class="ai-badge">Claude</span>
           <span class="web-badge" id="webBadge" style="display:none;">+ Web</span>
-          <button class="icon-btn" onclick="clearChat()" title="Réinitialiser"><i class="ti ti-refresh"></i></button>
+          <button class="icon-btn" onclick="clearChat()"><i class="ti ti-refresh"></i></button>
         </div>
         <div class="ai-messages" id="aiMessages">
-          <div class="ai-msg ai">
-            <div class="ai-msg-label">Claude</div>
-            <div class="ai-msg-bubble">Salut ! Pose-moi des questions sur tes notes, ou active la recherche web pour des questions plus larges. 🧠</div>
-          </div>
+          <div class="ai-msg ai"><div class="ai-msg-label">Claude</div><div class="ai-msg-bubble">Salut ! Pose-moi des questions sur tes notes ou tes événements agenda. 🧠</div></div>
         </div>
         <div class="ai-options">
-          <label>
-            <input type="checkbox" id="webSearchToggle" onchange="toggleWebBadge()">
-            <i class="ti ti-world" style="font-size:14px;color:var(--muted);"></i>
-            Recherche web
-          </label>
+          <label><input type="checkbox" id="webSearchToggle" onchange="toggleWebBadge()"><i class="ti ti-world" style="font-size:14px;color:var(--muted);"></i>Recherche web</label>
         </div>
         <div class="ai-suggestions" id="aiSugg">
           <button class="suggestion-chip" onclick="useSugg(this)">Résume mes notes pro</button>
@@ -360,7 +287,6 @@ body{
     </div>
   </div>
 
-  <!-- BOTTOM NAV (mobile) -->
   <nav class="bottom-nav" id="bottomNav">
     <button class="bottom-nav-item active" onclick="mobileTab('notes',this)"><i class="ti ti-note"></i>Notes</button>
     <button class="bottom-nav-item" onclick="openModal()"><i class="ti ti-plus"></i>Ajouter</button>
@@ -368,7 +294,7 @@ body{
   </nav>
 </div>
 
-<!-- AI SHEET (mobile) -->
+<!-- AI SHEET MOBILE -->
 <div class="ai-sheet" id="aiSheet">
   <div class="ai-sheet-handle"></div>
   <div class="ai-header" style="padding:12px 14px 10px;">
@@ -378,16 +304,12 @@ body{
     <button class="icon-btn" onclick="closeMobileAi()"><i class="ti ti-x"></i></button>
   </div>
   <div class="ai-messages" id="aiMessagesMobile">
-    <div class="ai-msg ai">
-      <div class="ai-msg-label">Claude</div>
-      <div class="ai-msg-bubble">Pose-moi des questions sur tes notes ou tes événements agenda. 🧠</div>
-    </div>
+    <div class="ai-msg ai"><div class="ai-msg-label">Claude</div><div class="ai-msg-bubble">Pose-moi des questions sur tes notes ou tes événements. 🧠</div></div>
   </div>
   <div class="ai-options" style="padding:7px 12px;display:flex;align-items:center;gap:8px;border-top:1px solid var(--border);">
     <label style="font-size:13px;color:var(--muted);display:flex;align-items:center;gap:5px;cursor:pointer;">
       <input type="checkbox" id="webSearchToggleMobile" style="accent-color:var(--accent);width:14px;height:14px;">
-      <i class="ti ti-world" style="font-size:14px;color:var(--muted);"></i>
-      Recherche web
+      <i class="ti ti-world" style="font-size:14px;color:var(--muted);"></i>Recherche web
     </label>
   </div>
   <div style="padding:7px 12px;display:flex;flex-wrap:wrap;gap:5px;border-top:1px solid var(--border);">
@@ -419,57 +341,39 @@ body{
 </div>
 
 <script>
-// ── STORAGE ──
 const KEY='sb_djo_v2';
 const API_KEY_STORE='sb_api_key';
 const GCAL_TOKEN_STORE='sb_gcal_token';
-let notes=[],filter='all',sort='date',editId=null;
-let apiKey='',gcalToken='';
+let notes=[],filter='all',sort='date',editId=null,apiKey='',gcalToken='';
 
 // ── API KEY ──
-function loadApiKey(){
-  apiKey=localStorage.getItem(API_KEY_STORE)||'';
-  if(!apiKey)setTimeout(()=>document.getElementById('apiBanner').classList.add('visible'),800);
-}
-function saveApiKey(){
-  const val=document.getElementById('apiKeyInput').value.trim();
-  if(!val)return;
-  apiKey=val;localStorage.setItem(API_KEY_STORE,val);
-  document.getElementById('apiBanner').classList.remove('visible');
-}
-function showApiKeyBanner(){
-  document.getElementById('apiKeyInput').value=apiKey;
-  document.getElementById('apiBanner').classList.add('visible');
-}
-function showGcalBanner(){
-  document.getElementById('gcalBanner').classList.add('visible');
-}
+function loadApiKey(){apiKey=localStorage.getItem(API_KEY_STORE)||'';if(!apiKey)setTimeout(()=>document.getElementById('apiBanner').classList.add('visible'),800);}
+function saveApiKey(){const val=document.getElementById('apiKeyInput').value.trim();if(!val)return;apiKey=val;localStorage.setItem(API_KEY_STORE,val);document.getElementById('apiBanner').classList.remove('visible');}
+function showApiKeyBanner(){document.getElementById('apiKeyInput').value=apiKey;document.getElementById('apiBanner').classList.add('visible');}
+function showGcalBanner(){document.getElementById('gcalBanner').classList.add('visible');}
 
-// ── GOOGLE CALENDAR OAUTH ──
-// IMPORTANT : remplace ces valeurs par tes credentials Google Cloud Console
-const GCAL_CLIENT_ID = '364853478072-goiod7hg2dpiehc4qpvlr77vi2hgn25r.apps.googleusercontent.com';
-const GCAL_SCOPE = 'https://www.googleapis.com/auth/calendar.readonly';
+// ── GOOGLE CALENDAR ──
+const GCAL_CLIENT_ID='364853478072-goiod7hg2dpiehc4qpvlr77vi2hgn25r.apps.googleusercontent.com';
+const GCAL_SCOPE='https://www.googleapis.com/auth/calendar.readonly';
 
 function connectGoogleCalendar(){
-  // Vérifie si on est dans Capacitor (app Android) ou navigateur
-  const redirectUri = window.location.origin + window.location.pathname;
-  const authUrl = `https://accounts.google.com/o/oauth2/v2/auth`
-    + `?client_id=${GCAL_CLIENT_ID}`
-    + `&redirect_uri=${encodeURIComponent(redirectUri)}`
-    + `&response_type=token`
-    + `&scope=${encodeURIComponent(GCAL_SCOPE)}`
-    + `&prompt=consent`;
-  window.location.href = authUrl;
+  const redirectUri=window.location.origin+window.location.pathname;
+  const authUrl='https://accounts.google.com/o/oauth2/v2/auth'
+    +'?client_id='+GCAL_CLIENT_ID
+    +'&redirect_uri='+encodeURIComponent(redirectUri)
+    +'&response_type=token'
+    +'&scope='+encodeURIComponent(GCAL_SCOPE)
+    +'&prompt=consent';
+  window.location.href=authUrl;
 }
 
 function checkGcalCallback(){
-  // Récupère le token depuis le hash URL après redirect OAuth
-  const hash = window.location.hash;
+  const hash=window.location.hash;
   if(hash.includes('access_token')){
-    const params = new URLSearchParams(hash.replace('#',''));
-    gcalToken = params.get('access_token');
+    const params=new URLSearchParams(hash.replace('#',''));
+    gcalToken=params.get('access_token');
     if(gcalToken){
-      localStorage.setItem(GCAL_TOKEN_STORE, gcalToken);
+      localStorage.setItem(GCAL_TOKEN_STORE,gcalToken);
       window.history.replaceState(null,'',window.location.pathname);
       document.getElementById('gcalBanner').classList.remove('visible');
       importGoogleCalendarEvents();
@@ -477,66 +381,38 @@ function checkGcalCallback(){
   }
 }
 
-function loadGcalToken(){
-  gcalToken = localStorage.getItem(GCAL_TOKEN_STORE)||'';
-}
+function loadGcalToken(){gcalToken=localStorage.getItem(GCAL_TOKEN_STORE)||'';}
 
 async function importGoogleCalendarEvents(){
-  if(!gcalToken){ showGcalBanner(); return; }
-
-  // Récupère les événements des 30 prochains jours
-  const now = new Date().toISOString();
-  const future = new Date(Date.now() + 30*24*60*60*1000).toISOString();
-  const url = `https://www.googleapis.com/calendar/v3/calendars/primary/events`
-    + `?timeMin=${encodeURIComponent(now)}`
-    + `&timeMax=${encodeURIComponent(future)}`
-    + `&singleEvents=true`
-    + `&orderBy=startTime`
-    + `&maxResults=50`;
-
+  if(!gcalToken){showGcalBanner();return;}
+  const now=new Date().toISOString();
+  const future=new Date(Date.now()+30*24*60*60*1000).toISOString();
+  const url='https://www.googleapis.com/calendar/v3/calendars/primary/events'
+    +'?timeMin='+encodeURIComponent(now)
+    +'&timeMax='+encodeURIComponent(future)
+    +'&singleEvents=true&orderBy=startTime&maxResults=50';
   try{
-    const r = await fetch(url, {
-      headers:{ Authorization:`Bearer ${gcalToken}` }
-    });
-    if(r.status===401){
-      // Token expiré
-      gcalToken='';
-      localStorage.removeItem(GCAL_TOKEN_STORE);
-      showGcalBanner();
-      return;
-    }
-    const data = await r.json();
-    const events = data.items||[];
-    let added = 0;
+    const r=await fetch(url,{headers:{Authorization:'Bearer '+gcalToken}});
+    if(r.status===401){gcalToken='';localStorage.removeItem(GCAL_TOKEN_STORE);showGcalBanner();return;}
+    const data=await r.json();
+    const events=data.items||[];
+    let added=0;
     events.forEach(ev=>{
-      const evId = 'gcal_'+ev.id;
-      if(notes.find(n=>n.id===evId)) return; // déjà importé
-      const start = ev.start?.dateTime || ev.start?.date || '';
-      const dateLabel = start ? new Date(start).toLocaleDateString('fr-FR',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'}) : '';
-      notes.unshift({
-        id: evId,
-        title: ev.summary || 'Événement sans titre',
-        category: 'cal',
-        body: (ev.description||'') + (dateLabel ? `\n📅 ${dateLabel}` : '') + (ev.location ? `\n📍 ${ev.location}` : ''),
-        date: start || new Date().toISOString(),
-        isCalendar: true
-      });
+      const evId='gcal_'+ev.id;
+      if(notes.find(n=>n.id===evId))return;
+      const start=ev.start?.dateTime||ev.start?.date||'';
+      const dateLabel=start?new Date(start).toLocaleDateString('fr-FR',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'}):'';
+      notes.unshift({id:evId,title:ev.summary||'Événement sans titre',category:'cal',body:(ev.description||'')+(dateLabel?'\n📅 '+dateLabel:'')+(ev.location?'\n📍 '+ev.location:''),date:start||new Date().toISOString(),isCalendar:true});
       added++;
     });
     save();renderNotes();
-    if(added>0) alert(`✅ ${added} événement(s) importé(s) depuis Google Calendar !`);
+    if(added>0)alert('✅ '+added+' événement(s) importé(s) !');
     else alert('Aucun nouvel événement dans les 30 prochains jours.');
-  }catch(e){
-    alert('Erreur lors de la connexion à Google Calendar. Réessaie.');
-    gcalToken='';localStorage.removeItem(GCAL_TOKEN_STORE);
-  }
+  }catch(e){alert('Erreur Google Calendar. Réessaie.');gcalToken='';localStorage.removeItem(GCAL_TOKEN_STORE);}
 }
 
 // ── NOTES ──
-function load(){
-  try{notes=JSON.parse(localStorage.getItem(KEY)||'[]');}catch{notes=[];}
-  if(!notes.length)seed();
-}
+function load(){try{notes=JSON.parse(localStorage.getItem(KEY)||'[]');}catch{notes=[];}if(!notes.length)seed();}
 function save(){try{localStorage.setItem(KEY,JSON.stringify(notes));}catch{}}
 function seed(){
   notes=[
@@ -550,8 +426,8 @@ function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g
 function fmtDate(iso){
   const d=new Date(iso),now=new Date(),diff=(now-d)/1000;
   if(diff<0)return new Date(iso).toLocaleDateString('fr-FR',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'});
-  if(diff<3600)return`il y a ${Math.round(diff/60)} min`;
-  if(diff<86400)return`il y a ${Math.round(diff/3600)}h`;
+  if(diff<3600)return'il y a '+Math.round(diff/60)+' min';
+  if(diff<86400)return'il y a '+Math.round(diff/3600)+'h';
   if(diff<172800)return'hier';
   return d.toLocaleDateString('fr-FR',{day:'numeric',month:'short'});
 }
@@ -577,10 +453,10 @@ function renderNotes(){
   });
   const grid=document.getElementById('notesGrid');
   const f=getFiltered();
-  if(!f.length){grid.innerHTML=`<div class="empty-state"><i class="ti ti-note-off"></i><p>Aucune note trouvée.<br>Crée ta première note !</p></div>`;return;}
+  if(!f.length){grid.innerHTML='<div class="empty-state"><i class="ti ti-note-off"></i><p>Aucune note trouvée.<br>Crée ta première note !</p></div>';return;}
   const tagLabel={pro:'Pro',perso:'Perso',idee:'Idée',cal:'Agenda'};
   grid.innerHTML=f.map(n=>`
-    <div class="note-card${n.isCalendar?' calendar-card':''}" onclick="${n.isCalendar?'':` editNote(${n.id})`}">
+    <div class="note-card${n.isCalendar?' calendar-card':''}" onclick="${n.isCalendar?'':' editNote('+n.id+')'}">
       <div class="note-card-top">
         <span class="tag ${n.category}">${tagLabel[n.category]||n.category}</span>
         <span class="note-date">${fmtDate(n.date)}</span>
@@ -588,66 +464,24 @@ function renderNotes(){
       <div class="note-title">${esc(n.title)}</div>
       <div class="note-body">${esc(n.body)}</div>
       <div class="note-actions" onclick="event.stopPropagation()">
-        ${!n.isCalendar?`<button class="icon-btn" onclick="editNote(${n.id})" title="Modifier"><i class="ti ti-edit"></i></button>`:''}
-        <button class="icon-btn danger" onclick="deleteNote('${n.id}')" title="Supprimer"><i class="ti ti-trash"></i></button>
+        ${!n.isCalendar?'<button class="icon-btn" onclick="editNote('+n.id+')" title="Modifier"><i class="ti ti-edit"></i></button>':''}
+        <button class="icon-btn danger" onclick="deleteNote(\''+n.id+'\')" title="Supprimer"><i class="ti ti-trash"></i></button>
       </div>
     </div>`).join('');
 }
-function setFilter(f,el){
-  filter=f;
-  document.querySelectorAll('.sidebar .nav-item').forEach(e=>e.classList.remove('active'));
-  el.classList.add('active');
-  const t={all:'Toutes les notes',pro:'Notes Pro',perso:'Notes Perso',idee:'Idées',cal:'Agenda Google'};
-  document.getElementById('mainTitle').textContent=t[f]||f;
-  renderNotes();closeSidebar();
-}
-function setSort(s,el){
-  sort=s;
-  document.querySelectorAll('.filter-chip').forEach(e=>e.classList.remove('active'));
-  el.classList.add('active');renderNotes();
-}
+function setFilter(f,el){filter=f;document.querySelectorAll('.sidebar .nav-item').forEach(e=>e.classList.remove('active'));el.classList.add('active');const t={all:'Toutes les notes',pro:'Notes Pro',perso:'Notes Perso',idee:'Idées',cal:'Agenda Google'};document.getElementById('mainTitle').textContent=t[f]||f;renderNotes();closeSidebar();}
+function setSort(s,el){sort=s;document.querySelectorAll('.filter-chip').forEach(e=>e.classList.remove('active'));el.classList.add('active');renderNotes();}
 
-// ── SIDEBAR MOBILE ──
-function toggleSidebar(){
-  document.getElementById('sidebar').classList.toggle('open');
-  document.getElementById('sidebarOverlay').classList.toggle('open');
-}
-function closeSidebar(){
-  document.getElementById('sidebar').classList.remove('open');
-  document.getElementById('sidebarOverlay').classList.remove('open');
-}
-
-// ── MOBILE TABS ──
-function mobileTab(tab,el){
-  document.querySelectorAll('.bottom-nav-item').forEach(e=>e.classList.remove('active'));
-  el.classList.add('active');
-  if(tab==='ai')openMobileAi();else closeMobileAi();
-}
+// ── NAVIGATION ──
+function toggleSidebar(){document.getElementById('sidebar').classList.toggle('open');document.getElementById('sidebarOverlay').classList.toggle('open');}
+function closeSidebar(){document.getElementById('sidebar').classList.remove('open');document.getElementById('sidebarOverlay').classList.remove('open');}
+function mobileTab(tab,el){document.querySelectorAll('.bottom-nav-item').forEach(e=>e.classList.remove('active'));el.classList.add('active');if(tab==='ai')openMobileAi();else closeMobileAi();}
 function openMobileAi(){document.getElementById('aiSheet').classList.add('open');}
-function closeMobileAi(){
-  document.getElementById('aiSheet').classList.remove('open');
-  document.querySelectorAll('.bottom-nav-item').forEach((e,i)=>{e.classList.toggle('active',i===0);});
-}
+function closeMobileAi(){document.getElementById('aiSheet').classList.remove('open');document.querySelectorAll('.bottom-nav-item').forEach((e,i)=>{e.classList.toggle('active',i===0);});}
 
 // ── MODAL ──
-function openModal(){
-  editId=null;
-  document.getElementById('modalTitle').textContent='Nouvelle note';
-  document.getElementById('noteTitle').value='';
-  document.getElementById('noteCat').value='pro';
-  document.getElementById('noteBody').value='';
-  document.getElementById('modalOverlay').classList.add('open');
-  setTimeout(()=>document.getElementById('noteTitle').focus(),100);
-}
-function editNote(id){
-  const n=notes.find(x=>x.id===id);if(!n)return;
-  editId=id;
-  document.getElementById('modalTitle').textContent='Modifier la note';
-  document.getElementById('noteTitle').value=n.title;
-  document.getElementById('noteCat').value=n.category;
-  document.getElementById('noteBody').value=n.body;
-  document.getElementById('modalOverlay').classList.add('open');
-}
+function openModal(){editId=null;document.getElementById('modalTitle').textContent='Nouvelle note';document.getElementById('noteTitle').value='';document.getElementById('noteCat').value='pro';document.getElementById('noteBody').value='';document.getElementById('modalOverlay').classList.add('open');setTimeout(()=>document.getElementById('noteTitle').focus(),100);}
+function editNote(id){const n=notes.find(x=>x.id===id);if(!n)return;editId=id;document.getElementById('modalTitle').textContent='Modifier la note';document.getElementById('noteTitle').value=n.title;document.getElementById('noteCat').value=n.category;document.getElementById('noteBody').value=n.body;document.getElementById('modalOverlay').classList.add('open');}
 function closeModal(){document.getElementById('modalOverlay').classList.remove('open');editId=null;}
 function handleOverlayClick(e){if(e.target===document.getElementById('modalOverlay'))closeModal();}
 function saveNote(){
@@ -655,26 +489,18 @@ function saveNote(){
   const body=document.getElementById('noteBody').value.trim();
   const category=document.getElementById('noteCat').value;
   if(!title){document.getElementById('noteTitle').focus();return;}
-  if(editId){
-    const i=notes.findIndex(n=>n.id===editId);
-    if(i!==-1)notes[i]={...notes[i],title,body,category};
-  }else{
-    notes.unshift({id:Date.now(),title,body,category,date:new Date().toISOString()});
-  }
+  if(editId){const i=notes.findIndex(n=>n.id===editId);if(i!==-1)notes[i]={...notes[i],title,body,category};}
+  else{notes.unshift({id:Date.now(),title,body,category,date:new Date().toISOString()});}
   save();closeModal();renderNotes();
 }
 function deleteNote(id){
-  const numId = isNaN(id) ? id : Number(id);
+  const numId=isNaN(id)?id:Number(id);
   if(!confirm('Supprimer ?'))return;
   notes=notes.filter(n=>n.id!==numId&&n.id!==id);save();renderNotes();
 }
 
 // ── EXPORT / IMPORT ──
-function exportNotes(){
-  const b=new Blob([JSON.stringify(notes.filter(n=>!n.isCalendar),null,2)],{type:'application/json'});
-  const a=document.createElement('a');a.href=URL.createObjectURL(b);
-  a.download=`second-brain-${new Date().toISOString().slice(0,10)}.json`;a.click();
-}
+function exportNotes(){const b=new Blob([JSON.stringify(notes.filter(n=>!n.isCalendar),null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='second-brain-'+new Date().toISOString().slice(0,10)+'.json';a.click();}
 function importNotes(){document.getElementById('importFile').click();}
 function handleImport(e){
   const file=e.target.files[0];if(!file)return;
@@ -685,9 +511,8 @@ function handleImport(e){
       if(!Array.isArray(imported))throw new Error();
       const existingIds=new Set(notes.map(n=>String(n.id)));
       const newNotes=imported.filter(n=>!existingIds.has(String(n.id)));
-      notes=[...newNotes,...notes];
-      save();renderNotes();
-      alert(`${newNotes.length} note(s) importée(s) !`);
+      notes=[...newNotes,...notes];save();renderNotes();
+      alert(newNotes.length+' note(s) importée(s) !');
     }catch{alert('Fichier JSON invalide.');}
   };
   r.readAsText(file);e.target.value='';
@@ -695,31 +520,14 @@ function handleImport(e){
 
 // ── AI CHAT ──
 let chatHistory=[],isLoading=false;
-function toggleWebBadge(){
-  const on=document.getElementById('webSearchToggle').checked;
-  document.getElementById('webBadge').style.display=on?'':'none';
-}
+function toggleWebBadge(){document.getElementById('webBadge').style.display=document.getElementById('webSearchToggle').checked?'':'none';}
 function buildSystem(){
-  const userNotes=notes.filter(n=>!n.isCalendar).map(n=>`[${n.category.toUpperCase()}] "${n.title}"\n${n.body}`).join('\n\n---\n\n');
-  const calNotes=notes.filter(n=>n.isCalendar).map(n=>`[AGENDA] "${n.title}"\n${n.body}`).join('\n\n---\n\n');
-  return`Tu es l'assistant IA personnel de Djo, Operations Manager chez HPE Tunisie, manager d'une équipe de ~20 personnes. Réponds en français, concis et utile.\n\nNotes:\n${userNotes||'Aucune.'}\n\nÉvénements agenda:\n${calNotes||'Aucun événement importé.'}`;
+  const userNotes=notes.filter(n=>!n.isCalendar).map(n=>'['+n.category.toUpperCase()+'] "'+n.title+'"\n'+n.body).join('\n\n---\n\n');
+  const calNotes=notes.filter(n=>n.isCalendar).map(n=>'[AGENDA] "'+n.title+'"\n'+n.body).join('\n\n---\n\n');
+  return'Tu es l\'assistant IA personnel de Djo, Operations Manager chez HPE Tunisie. Réponds en français, concis et utile.\n\nNotes:\n'+(userNotes||'Aucune.')+'\n\nAgenda:\n'+(calNotes||'Aucun événement.');
 }
-function appendMsg(containerId,role,html){
-  const container=document.getElementById(containerId);
-  const d=document.createElement('div');
-  d.className=`ai-msg ${role}`;
-  d.innerHTML=`<div class="ai-msg-label">${role==='user'?'Toi':'Claude'}</div><div class="ai-msg-bubble">${html}</div>`;
-  container.appendChild(d);container.scrollTop=container.scrollHeight;
-}
-function showTypingEl(containerId,withWeb){
-  const container=document.getElementById(containerId);
-  const d=document.createElement('div');d.className='ai-msg ai';d.id='typing_'+containerId;
-  const indicator=withWeb
-    ?`<div class="web-search-indicator"><i class="ti ti-world" style="font-size:13px;"></i>Recherche sur le web...</div>`
-    :`<div class="typing-indicator"><div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div></div>`;
-  d.innerHTML=`<div class="ai-msg-label">Claude</div><div class="ai-msg-bubble">${indicator}</div>`;
-  container.appendChild(d);container.scrollTop=container.scrollHeight;
-}
+function appendMsg(containerId,role,html){const container=document.getElementById(containerId);const d=document.createElement('div');d.className='ai-msg '+role;d.innerHTML='<div class="ai-msg-label">'+(role==='user'?'Toi':'Claude')+'</div><div class="ai-msg-bubble">'+html+'</div>';container.appendChild(d);container.scrollTop=container.scrollHeight;}
+function showTypingEl(containerId,withWeb){const container=document.getElementById(containerId);const d=document.createElement('div');d.className='ai-msg ai';d.id='typing_'+containerId;const indicator=withWeb?'<div class="web-search-indicator"><i class="ti ti-world" style="font-size:13px;"></i>Recherche sur le web...</div>':'<div class="typing-indicator"><div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div></div>';d.innerHTML='<div class="ai-msg-label">Claude</div><div class="ai-msg-bubble">'+indicator+'</div>';container.appendChild(d);container.scrollTop=container.scrollHeight;}
 function removeTypingEl(containerId){const el=document.getElementById('typing_'+containerId);if(el)el.remove();}
 async function doSend(msg,messagesId,sendBtnId,useWeb){
   if(isLoading||!msg)return;
@@ -731,19 +539,14 @@ async function doSend(msg,messagesId,sendBtnId,useWeb){
   try{
     const body={model:'claude-sonnet-4-20250514',max_tokens:1000,system:buildSystem(),messages:chatHistory};
     if(useWeb)body.tools=[{type:'web_search_20250305',name:'web_search'}];
-    const r=await fetch('https://api.anthropic.com/v1/messages',{
-      method:'POST',
-      headers:{'Content-Type':'application/json','x-api-key':apiKey,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},
-      body:JSON.stringify(body)
-    });
+    const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json','x-api-key':apiKey,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},body:JSON.stringify(body)});
     removeTypingEl(messagesId);
-    if(!r.ok){const err=await r.json().catch(()=>({}));appendMsg(messagesId,'ai',`⚠️ ${esc(err?.error?.message||'Erreur')}`);isLoading=false;document.getElementById(sendBtnId).disabled=false;return;}
+    if(!r.ok){const err=await r.json().catch(()=>({}));appendMsg(messagesId,'ai','⚠️ '+esc(err?.error?.message||'Erreur'));isLoading=false;document.getElementById(sendBtnId).disabled=false;return;}
     const data=await r.json();
-    let txt='';
-    for(const block of(data.content||[])){if(block.type==='text')txt+=block.text;}
+    let txt='';for(const block of(data.content||[])){if(block.type==='text')txt+=block.text;}
     if(!txt)txt='Désolé, je n\'ai pas pu répondre.';
     chatHistory.push({role:'assistant',content:data.content||txt});
-    const formatted=esc(txt).replace(/\n/g,'<br>').replace(/https?:\/\/[^\s<]+/g,url=>`<a href="${url}" target="_blank" rel="noopener">${url}</a>`);
+    const formatted=esc(txt).replace(/\n/g,'<br>').replace(/https?:\/\/[^\s<]+/g,url=>'<a href="'+url+'" target="_blank" rel="noopener">'+url+'</a>');
     appendMsg(messagesId,'ai',formatted);
   }catch{removeTypingEl(messagesId);appendMsg(messagesId,'ai','⚠️ Erreur de connexion.');}
   isLoading=false;document.getElementById(sendBtnId).disabled=false;
@@ -754,14 +557,14 @@ function handleKey(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendMs
 function handleKeyMobile(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendMsgMobile();}}
 function useSugg(el){document.getElementById('aiInput').value=el.textContent;sendMsg();}
 function useSuggMobile(el){document.getElementById('aiInputMobile').value=el.textContent;sendMsgMobile();}
-function clearChat(){chatHistory=[];const c=document.getElementById('aiMessages');c.innerHTML=`<div class="ai-msg ai"><div class="ai-msg-label">Claude</div><div class="ai-msg-bubble">Chat réinitialisé. Comment puis-je t'aider ?</div></div>`;}
+function clearChat(){chatHistory=[];const c=document.getElementById('aiMessages');c.innerHTML='<div class="ai-msg ai"><div class="ai-msg-label">Claude</div><div class="ai-msg-bubble">Chat réinitialisé. Comment puis-je t\'aider ?</div></div>';}
 
 // ── INIT ──
 loadApiKey();
 loadGcalToken();
 load();
 renderNotes();
-checkGcalCallback(); // vérifie le retour OAuth Google
+checkGcalCallback();
 </script>
 </body>
 </html>
