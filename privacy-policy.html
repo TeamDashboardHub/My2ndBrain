@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Politique de Confidentialité — Second Brain</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700&display=swap');
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Syne',sans-serif;background:#0e0e11;color:#f0f0f5;line-height:1.7;padding:0;}
+  .container{max-width:780px;margin:0 auto;padding:48px 24px;}
+  .logo{display:flex;align-items:center;gap:10px;margin-bottom:48px;}
+  .logo-dot{width:32px;height:32px;border-radius:8px;background:#7c6aff;display:flex;align-items:center;justify-content:center;font-size:18px;}
+  .logo span{font-size:20px;font-weight:700;}
+  h1{font-size:32px;font-weight:700;margin-bottom:8px;color:#f0f0f5;}
+  .subtitle{color:rgba(240,240,245,0.45);font-size:14px;margin-bottom:48px;}
+  h2{font-size:18px;font-weight:700;color:#b8aeff;margin:36px 0 12px;}
+  p{color:rgba(240,240,245,0.8);margin-bottom:12px;font-size:15px;}
+  ul{color:rgba(240,240,245,0.8);margin:8px 0 12px 20px;font-size:15px;}
+  ul li{margin-bottom:6px;}
+  .highlight{background:rgba(124,106,255,0.1);border-left:3px solid #7c6aff;padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0;}
+  .highlight p{margin:0;color:#b8aeff;}
+  .contact-box{background:#16161a;border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:24px;margin-top:36px;}
+  .contact-box p{margin:0;font-size:14px;}
+  .contact-box a{color:#7c6aff;}
+  footer{margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.07);font-size:13px;color:rgba(240,240,245,0.3);text-align:center;}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="logo">
+    <div class="logo-dot">🧠</div>
+    <span>Second Brain</span>
+  </div>
+
+  <h1>Politique de Confidentialité</h1>
+  <p class="subtitle">Dernière mise à jour : 13 mai 2026</p>
+
+  <div class="highlight">
+    <p>Second Brain est une application personnelle de gestion de notes et de connaissances. Nous prenons la confidentialité de vos données très au sérieux.</p>
+  </div>
+
+  <h2>1. Informations que nous collectons</h2>
+  <p>Second Brain est conçu pour fonctionner principalement en local sur votre appareil. Voici les données utilisées par l'application :</p>
+  <ul>
+    <li><strong>Notes personnelles</strong> — les notes que vous créez sont stockées uniquement sur votre appareil via le stockage local (localStorage). Elles ne sont jamais envoyées à nos serveurs.</li>
+    <li><strong>Clé API Anthropic</strong> — si vous utilisez l'assistant IA, votre clé API est stockée localement sur votre appareil et n'est transmise qu'à Anthropic (api.anthropic.com) pour traiter vos requêtes.</li>
+    <li><strong>Données Google Calendar</strong> — si vous connectez Google Calendar, un token d'accès temporaire est stocké localement. Les données de votre agenda sont récupérées directement depuis Google et affichées dans l'app, sans être stockées sur nos serveurs.</li>
+  </ul>
+
+  <h2>2. Comment nous utilisons vos informations</h2>
+  <p>Les données collectées sont utilisées uniquement pour :</p>
+  <ul>
+    <li>Afficher et gérer vos notes personnelles</li>
+    <li>Alimenter l'assistant IA avec le contexte de vos notes (via l'API Anthropic)</li>
+    <li>Afficher vos événements Google Calendar dans l'application</li>
+  </ul>
+  <p>Nous ne vendons, ne partageons et ne transmettons jamais vos données personnelles à des tiers, sauf dans les cas décrits ci-dessus (Anthropic pour l'IA, Google pour le Calendar).</p>
+
+  <h2>3. Stockage des données</h2>
+  <div class="highlight">
+    <p>Toutes vos notes sont stockées <strong>uniquement sur votre appareil</strong>. Si vous désinstallez l'application ou effacez les données de l'app, toutes vos notes seront supprimées définitivement.</p>
+  </div>
+  <p>Nous vous recommandons d'utiliser la fonction <strong>Exporter JSON</strong> régulièrement pour sauvegarder vos notes.</p>
+
+  <h2>4. Services tiers</h2>
+  <p>Second Brain utilise les services tiers suivants :</p>
+  <ul>
+    <li><strong>Anthropic (Claude API)</strong> — pour l'assistant IA. Vos messages et le contexte de vos notes sont envoyés à Anthropic pour générer des réponses. Consultez la politique de confidentialité d'Anthropic sur <a href="https://www.anthropic.com/privacy" style="color:#7c6aff;">anthropic.com/privacy</a>.</li>
+    <li><strong>Google Calendar API</strong> — pour importer vos événements. L'accès est limité à la lecture seule de votre agenda principal. Consultez la politique de confidentialité de Google sur <a href="https://policies.google.com/privacy" style="color:#7c6aff;">policies.google.com/privacy</a>.</li>
+  </ul>
+
+  <h2>5. Sécurité</h2>
+  <p>Nous mettons en œuvre des mesures appropriées pour protéger vos informations :</p>
+  <ul>
+    <li>Les communications avec l'API Anthropic et Google sont chiffrées via HTTPS</li>
+    <li>Votre clé API et vos tokens d'accès sont stockés localement et ne transitent jamais par nos serveurs</li>
+    <li>L'application ne nécessite pas de création de compte</li>
+  </ul>
+
+  <h2>6. Vos droits</h2>
+  <p>Vous avez le contrôle total sur vos données :</p>
+  <ul>
+    <li><strong>Accès</strong> — toutes vos notes sont visibles directement dans l'application</li>
+    <li><strong>Export</strong> — vous pouvez exporter toutes vos notes en JSON à tout moment</li>
+    <li><strong>Suppression</strong> — vous pouvez supprimer vos notes individuellement ou désinstaller l'app pour tout effacer</li>
+    <li><strong>Révocation</strong> — vous pouvez révoquer l'accès Google Calendar depuis les paramètres de votre compte Google</li>
+  </ul>
+
+  <h2>7. Enfants</h2>
+  <p>Second Brain n'est pas destiné aux enfants de moins de 13 ans. Nous ne collectons pas sciemment de données personnelles auprès d'enfants.</p>
+
+  <h2>8. Modifications de cette politique</h2>
+  <p>Nous pouvons mettre à jour cette politique de confidentialité occasionnellement. Nous vous informerons de tout changement en publiant la nouvelle politique sur cette page avec une date de mise à jour.</p>
+
+  <h2>9. Contact</h2>
+  <div class="contact-box">
+    <p>Si vous avez des questions concernant cette politique de confidentialité, vous pouvez nous contacter à :</p>
+    <br>
+    <p>📧 <a href="mailto:r.youssef01@gmail.com">r.youssef01@gmail.com</a></p>
+    <p>🌐 <a href="https://teamdashboardhub.github.io/My2ndBrain/">teamdashboardhub.github.io/My2ndBrain</a></p>
+  </div>
+
+  <footer>
+    © 2026 Second Brain — Tous droits réservés
+  </footer>
+
+</div>
+</body>
+</html>
